@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Professional Calculator</title>
+  <title>Smart Calculator</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -147,6 +147,7 @@
 
       <button class="cmp-btn" onclick="append('>=')">≥</button>
       <button class="cmp-btn" onclick="append('<=')">≤</button>
+      <button class="act-btn" onclick="backspace()">⌫</button>
       <button class="act-btn" onclick="clearExpr()">C</button>
       <button class="act-btn" onclick="calculate()">=</button>
     </div>
@@ -175,6 +176,12 @@
     // Append symbol to expression
     function append(value) {
       document.getElementById("expression").value += value;
+    }
+
+    // Backspace function
+    function backspace() {
+      let expr = document.getElementById("expression").value;
+      document.getElementById("expression").value = expr.slice(0, -1);
     }
 
     // Clear expression
